@@ -53,10 +53,24 @@ public class CubeScript : MonoBehaviour
             new Vector3(1.0f, -1.0f, 1.0f),
             new Vector3(1.0f, -1.0f, -1.0f),
             new Vector3(1.0f, 1.0f, -1.0f),
-            new Vector3(1.0f, 1.0f, 1.0f)
+            new Vector3(1.0f, 1.0f, 1.0f),
 
             // Task 2: Define vertices for front and back faces
             // Remember to also define corresponding vertex colours!
+            // Solution:
+            new Vector3(-1.0f, 1.0f, 1.0f), // Front
+            new Vector3(1.0f, -1.0f, 1.0f),
+            new Vector3(1.0f, 1.0f, 1.0f),
+            new Vector3(-1.0f, 1.0f, 1.0f),
+            new Vector3(-1.0f, -1.0f, 1.0f),
+            new Vector3(1.0f, -1.0f, 1.0f),
+
+            new Vector3(-1.0f, 1.0f, -1.0f), // Back
+            new Vector3(1.0f, 1.0f, -1.0f),
+            new Vector3(1.0f, -1.0f, -1.0f),
+            new Vector3(-1.0f, -1.0f, -1.0f),
+            new Vector3(-1.0f, 1.0f, -1.0f),
+            new Vector3(1.0f, -1.0f, -1.0f)
         };
 
         // Define the vertex colours
@@ -87,7 +101,22 @@ public class CubeScript : MonoBehaviour
             Color.yellow,
             Color.yellow,
             Color.yellow,
-            Color.yellow
+            Color.yellow,
+
+            // Task 2 vertex colours:
+            Color.blue, // Front
+            Color.blue,
+            Color.blue,
+            Color.blue,
+            Color.blue,
+            Color.blue,
+
+            Color.blue, // Back
+            Color.blue,
+            Color.blue,
+            Color.blue,
+            Color.blue,
+            Color.blue
         };
 
         // Automatically define the triangles based on the number of vertices
@@ -95,7 +124,7 @@ public class CubeScript : MonoBehaviour
         // when back-face culling is on.
         int[] triangles = new int[m.vertices.Length];
         for (int i = 0; i < m.vertices.Length; i++)
-            triangles[i] = i;
+            triangles[i] = m.vertices.Length - i - 1; // Task 4 solution (reverse the indices)
 
         m.triangles = triangles;
 
