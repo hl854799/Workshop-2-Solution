@@ -13,7 +13,7 @@ public class ConeScript : MonoBehaviour {
 	[Range(3, 100)] public int numBaseVertices = 20; //Range shows a slider in the inspector for the public variable
 	[Range(1.5f, 100)] public float radius = 1.5f;
 	[Range(3.0f, 100)] public float height = 3.0f;
-	public bool shareVertices = false;
+	public bool shareVertices = true;
 	[SerializeField] private int numberOfVertices; //SerializeField Makes private variables visible in the inspector (but not editable)
 	[SerializeField] private int numberOfTriangles;
 
