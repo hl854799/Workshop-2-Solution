@@ -134,7 +134,7 @@ public class ConeScript : MonoBehaviour {
 		m.colors = colors.ToArray();
 		m.triangles = triangles.ToArray();
 
-		numberOfTriangles = m.triangles.Length;
+		numberOfTriangles = m.triangles.Length/3;
 		numberOfVertices = m.vertices.Length;
 		return m;
 	}
