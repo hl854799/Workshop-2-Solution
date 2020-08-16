@@ -123,10 +123,10 @@ public class CubeScript : MonoBehaviour
         // Task 4: Modify this code to show the interior of the cube instead of the exterior
         // when back-face culling is on.
         int[] triangles = new int[m.vertices.Length];
-        for (int i = 0; i < m.vertices.Length; i++)
+        for (int i = 0; i < m.vertices.Length; i++){
             triangles[i] = m.vertices.Length - i - 1; // Task 4 solution (reverse the indices)
-
-        m.triangles = triangles;
+        }
+        m.SetTriangles(triangles,0);
 
         return m;
     }
