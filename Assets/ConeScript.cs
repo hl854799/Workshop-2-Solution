@@ -36,10 +36,8 @@ public class ConeScript : MonoBehaviour
         renderer.material.shader = Shader.Find("Unlit/VertexColorShader");
     }
 
-    // This function is called when the script is loaded or a value is changed in the 
-    // inspector (Called in the editor only).
-    void OnValidate()
-    {
+    // This function is called on each frame
+    private void Update() {
         if (coneMesh == null) { return; }
         coneMesh.mesh = CreateConeMesh();
     }
